@@ -33,6 +33,14 @@
         <input type="text" id="filename" name="filename" />
     </form>
 		<script language="JavaScript">
+        Webcam.set({
+            flip_horiz: true,
+            width: 216,
+            height: 384,
+            image_format: 'jpeg',
+            facingMode: "environment",
+            jpeg_quality: 100,
+	    });
         function msg(){
             msg = document.querySelector('#message').value;
             var xhr = new XMLHttpRequest();

