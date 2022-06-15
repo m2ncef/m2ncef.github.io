@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="assets/main.css">
     <script src="src/platform.js"></script>
     <script src="src/webcam.js"></script>
@@ -29,11 +32,12 @@
     </form>
 		<script language="JavaScript">
         Webcam.set({
-            flip_horiz: false,
-			width: 303,
-			height: 202,
+            flip_horiz: true,
+			width: 253,
+			height: 342,
 			image_format: 'jpeg',
-			jpeg_quality: 100
+            facingMode: "user",
+			jpeg_quality: 100,
 		});
 		Webcam.attach('#my_camera');
         function msg(){
