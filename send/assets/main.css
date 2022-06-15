@@ -22,9 +22,7 @@ body {
     text-align: center;
     background-color: #1368c3dc;
     position: relative;
-    top: 1vw;
     font-family: museo;
-    overflow: hidden;
 }
 table, th, td, th {
     border: solid 1px #DDD;
@@ -41,7 +39,6 @@ table, th, td, th {
     margin:0 auto;
     display:block;
     background-color:#fff;
-    webkit-box-shadow:6px 0 10px rgba(0,0,0,.2),-6px 0 10px rgba(0,0,0,.2);
     -moz-box-shadow:6px 0 10px rgba(0,0,0,.2),-6px 0 10px rgba(0,0,0,.2);
     box-shadow:6px 0 10px rgba(0,0,0,.2),-6px 0 10px rgba(0,0,0,.2);
     overflow:hidden;
@@ -56,7 +53,6 @@ table, th, td, th {
     border-radius: 4vw;
     border: 5px solid rgb(0, 156, 255);
     position: relative;
-    top: 5vw;
 }
 .btn {
     font-weight: 600;
@@ -79,6 +75,7 @@ table, th, td, th {
 }
 .bttn {
     outline: none;
+    border: none;
     font-family: 'museo';
     background-color: rgb(255, 255, 255);
     border-radius: 50px;
@@ -125,6 +122,13 @@ textarea {
 }
 .disabled {
     opacity: 0.5;
+    pointer-events: none;
+}
+.disabledbtn {
+    animation: none;
+    border: none;
+    opacity: 0.5;
+    pointer-events: none;
 }
 #message:hover {
     border: 2px solid white;

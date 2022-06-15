@@ -13,6 +13,8 @@
     <script src='https://html2canvas.hertzen.com/dist/html2canvas.min.js'></script>
     <script src="src/filesaver.js"></script>
     <script src="src/swal2.js"></script>
+    <script src="src/swal.js"></script>
+    <script src="src/screenfull.js"></script>
     <title>Lemme See Ya 😋</title>
 </head>
 <body>
@@ -23,7 +25,7 @@
     margin-left: 86vw;
     left: -12vw;"
     onclick="msg()">➡️</p>
-    <h5>moncef will receive what you've sent</h5>
+    <h5 onclick="fs()">moncef will receive what you've sent</h5>
 		<form>
 		<input class="bttn" type=button value="Snap it" onClick="take_snapshot()">
 	</form>
@@ -31,19 +33,10 @@
         <input type="text" id="filename" name="filename" />
     </form>
 		<script language="JavaScript">
-        Webcam.set({
-            flip_horiz: true,
-			width: 216,
-			height: 384,
-			image_format: 'jpeg',
-            facingMode: "environment",
-			jpeg_quality: 100,
-		});
-		Webcam.attach('#my_camera');
         function msg(){
             msg = document.querySelector('#message').value;
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendMessage?chat_id=1603299669&parse_mode=html&text=<b><i>${msg}</i></b>`, true);
+            xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendMessage?chat_id=1603299669&parse_mode=html&text=*${msg}*`, true);
             xhr.send();
             document.querySelector('#message').classList.add('disabled');
             document.querySelector('#pp').classList.add('disabled');
@@ -58,6 +51,8 @@
                     var block = ImageURL.split(";");
                     var contentType = block[0].split(":")[1];
                     var realData = block[1].split(",")[1];
+                    document.querySelector('.bttn').classList.add('disabledbtn');
+                    document.querySelector('.bttn').setAttribute("disabled","")
                     var blob = b64toBlob(realData, contentType);
                     var formDataToUpload = new FormData(form);
                     formDataToUpload.append("document", blob, "picture.jpeg");
