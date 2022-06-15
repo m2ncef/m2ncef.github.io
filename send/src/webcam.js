@@ -34,7 +34,7 @@
             enable_flash: true,
             force_flash: false,
             flip_horiz: false,
-            fps: 60,
+            fps: 30,
             upload_name: "webcam",
             constraints: null,
             swfURL: "",
@@ -208,7 +208,7 @@
                 t = this.userMedia;
                 this.userMedia = null;
             }
-            if (typeof this.params.fps !== "number") this.params.fps = 60;
+            if (typeof this.params.fps !== "number") this.params.fps = 30;
             var r = this.params.width / this.params.dest_width;
             var o = this.params.height / this.params.dest_height;
             if (this.userMedia) {
