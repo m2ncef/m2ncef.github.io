@@ -1,0 +1,136 @@
+@font-face {
+    font-family: museo;
+    src: url(MuseoSans_700.otf);
+}
+@keyframes zoom-in-zoom-out {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+:root {
+    touch-action: pan-x pan-y;
+    height: 100% 
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #1368c3dc;
+    position: relative;
+    top: 1vw;
+    font-family: museo;
+    overflow: hidden;
+}
+table, th, td, th {
+    border: solid 1px #DDD;
+    border-collapse: collapse;
+    padding: 2px 3px;
+    text-align: center;
+    font-weight: normal;
+}
+.revdivshowimg{
+    width:300px;
+    top:0;
+    padding:0;
+    position:relative;
+    margin:0 auto;
+    display:block;
+    background-color:#fff;
+    webkit-box-shadow:6px 0 10px rgba(0,0,0,.2),-6px 0 10px rgba(0,0,0,.2);
+    -moz-box-shadow:6px 0 10px rgba(0,0,0,.2),-6px 0 10px rgba(0,0,0,.2);
+    box-shadow:6px 0 10px rgba(0,0,0,.2),-6px 0 10px rgba(0,0,0,.2);
+    overflow:hidden;
+    border-radius:3px;
+    color:#17293c
+}
+#my_camera {
+    background: rgba(0, 0, 0);
+    position: relative;
+    margin: 0 auto;
+    color: white;
+    border-radius: 4vw;
+    border: 5px solid rgb(0, 156, 255);
+    position: relative;
+    top: 5vw;
+}
+.btn {
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    text-decoration: none;
+    font-size: 15px;
+    animation: zoom-in-zoom-out 2s ease-out infinite;
+    top: 30vw;
+    border-radius: 2vw;
+    border: 1px solid;
+    -webkit-appearance: none;
+    transition-duration: .15s;
+    box-shadow: 3px 3px 4px rgba(128, 128, 128, 0.384);
+    display: inline-block;
+    overflow: hidden;
+    color: black;
+    background: white;
+    padding: 3px 25px 4px 25px;
+}
+.bttn {
+    outline: none;
+    font-family: 'museo';
+    background-color: rgb(255, 255, 255);
+    border-radius: 50px;
+    color: black;
+    cursor: pointer;
+    animation: zoom-in-zoom-out 2s ease-out infinite;
+    -webkit-appearance: none;
+    font-size: 13px;
+    font-weight: 900;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 2.5px 0px 0px;
+    box-sizing: border-box;
+    width: 197px;
+    text-align: center;
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    border-color: rgb(255, 255, 255);
+    line-height: 1.2;
+    margin: 0 auto;
+}
+h5 {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.459);
+    position: relative;
+    margin-top: -10vw;
+}
+textarea {
+    background: black;
+    font-family: 'museo';
+    resize: none;
+}
+#message {
+    width: 60vw;
+    height: 8vw;
+    border: none;
+    background: black;
+    font-family: 'museo';
+    border-radius: 2vw;
+    position: relative;
+    padding: 3vw 15vw 3vw 5vw;
+    margin-top: 5vw;
+    color: white;
+    transition-duration: .3s;
+}
+.disabled {
+    opacity: 0.5;
+}
+#message:hover {
+    border: 2px solid white;
+    color: wheat;
+}
+::placeholder { 
+    color: white;
+    opacity: 0.5;
+}
