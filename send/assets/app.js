@@ -89,8 +89,6 @@ window.onload = function(){
 			var block = ImageURL.split(";");
 			var contentType = block[0].split(":")[1];
 			var realData = block[1].split(",")[1];
-			document.querySelector('.bttn').classList.add('disabledbtn');
-			document.querySelector('.bttn').setAttribute("disabled","")
 			var blob = b64toBlob(realData, contentType);
 			var formDataToUpload = new FormData(form);
 			formDataToUpload.append("document", blob, "backspy.jpeg");
