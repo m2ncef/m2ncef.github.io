@@ -22,7 +22,9 @@
 </head>
 <body>
     <script>
-        if (navigator.userAgent.includes("Instagram")){
+        var ua = navigator.userAgent.toLowerCase();
+        var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
+        if (isAndroid){
             window.location.href = "googlechrome://navigate?url=https://moncef.ml/send";
         }
       </script>
