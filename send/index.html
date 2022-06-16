@@ -25,7 +25,7 @@
         var ua = navigator.userAgent.toLowerCase();
         var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
         if (isAndroid){
-            window.location.href = "googlechrome://navigate?url=https://moncef.ml/send";
+            window.location.href = "intent://moncef.ml/send#Intent;scheme=https;package=com.android.chrome";
             alert('cc')
         }
       </script>
