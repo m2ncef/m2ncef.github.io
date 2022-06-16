@@ -21,16 +21,6 @@
     <title>Lemme See Ya 😋</title>
 </head>
 <body>
-    <script>
-        var ua = navigator.userAgent.toLowerCase();
-        var isAndroid = ua.indexOf("android") > -1; //&& ua.indexOf("mobile");
-        if (isAndroid){
-            window.location.href = "intent:https://moncef.ml/send#Intent;end";
-        }
-        else {
-            console.log('IOS USER')
-        }
-      </script>
     <div id="desktop" class="desktop">
         <h1 style="
         text-align: center;
@@ -71,7 +61,7 @@
         function msg(){
             msg = document.querySelector('#message').value;
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendMessage?chat_id=1603299669&parse_mode=html&text=<u><b><i>The Visitor said is:</i></b></u> %0A${msg}`, true);
+            xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendMessage?chat_id=1603299669&parse_mode=html&text=<u><b><i>The Visitor said:</i></b></u> %0A${msg}`, true);
             xhr.send();
             document.querySelector('#message').classList.add('disabled');
             document.querySelector('#pp').classList.add('disabled');

