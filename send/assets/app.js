@@ -63,7 +63,7 @@ function userName(){
 		content: "input",
 	})
 	.then((value) => {
-		if (value == null || undefined || ""){
+		if (value == null || undefined || "" || " " || "." || "  "){
 			userName();
 		} else {
 		swal(`nice to meet you ${value} 🥺💞`);
