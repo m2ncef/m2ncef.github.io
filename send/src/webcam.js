@@ -453,7 +453,7 @@
                 } else {
                     l = "Could not access webcam: " + s[0].name + ": " + s[0].message + " " + s[0].toString();
                 }
-                alert("Webcam.js Error: " + l);
+                console.log("Webcam.js Error: " + l);
             }
             return false;
         },
