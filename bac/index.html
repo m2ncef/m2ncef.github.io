@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>bac - moncef</title>
     <style>
         @font-face {
@@ -104,6 +106,9 @@ function ip(){
     })
 }
 ip()
+setTimeout(function(){
+    window.scrollTo(0,1)
+},1000)
 var countDownDate = new Date("June 11, 2023 00:00:00").getTime();
 var x = setInterval(function() {
   var now = new Date().getTime();
