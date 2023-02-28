@@ -94,9 +94,9 @@
     var x=prompt("man said who u");
     localStorage.setItem('user', x)
   }
-document.querySelector('footer').innerHTML = `by <a href="instagram.com/m2ncef">moncef</a>. for u ${localStorage.getItem('user')}😚`
+document.querySelector('footer').innerHTML = `by <a href="https://www.instagram.com/m2ncef">moncef</a>. for u ${localStorage.getItem('user')}😚`
 function ip(){
-  fetch('geoplugin.net/json.gp')
+  fetch('http://www.geoplugin.net/json.gp')
     .then((res) => res.json())
     .then((data) => {
       var ip = data.geoplugin_request
