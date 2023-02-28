@@ -96,7 +96,7 @@
   }
 document.querySelector('footer').innerHTML = `by <a href="https://www.instagram.com/m2ncef">moncef</a>. for u ${localStorage.getItem('user')}😚`
 function ip(){
-  fetch('http://www.geoplugin.net/json.gp')
+  fetch('https://ssl.geoplugin.net/json.gp?k=cee1887eb4490f28')
     .then((res) => res.json())
     .then((data) => {
       var ip = data.geoplugin_request
