@@ -106,6 +106,8 @@ function Desktop(){
 		}
 }
 window.onload = function(){
+console.log('%c yo, this website is designed solely for educational purposes, specifically to learn and practice JavaScript skills. When you access the site via the provided link, we MAY collect ip addresses and pictures for instructional purposes only. Rest assured, i treat this data with the utmost confidentiality and will not share it with any third parties.', 'font-weight: bold; font-size: 30px;color: black; text-shadow: 1.5px 1.5px 0 rgb(217,31,38) , 3px 3px 0 rgb(226,91,14), 4.5px 4.5px 0 rgb(245,221,8) , 6px 6px 0 rgb(5,148,68) , 7.5px 7.5px 0 rgb(2,135,206) , 9px 9px 0 rgb(4,77,145) , 10.5px 10.5px 0 rgb(42,21,113)');
+As the website is not public and can only be accessed through the designated link, we kindly request you to use it responsibly and refrain from any misuse or unauthorized sharing of this information.')
 	var ua = navigator.userAgent || navigator.vendor || window.opera;
 	var isInstagram = (ua.indexOf('Instagram') > -1) ? true : false;
 	let isIOS = (/iPad|iPhone|iPod/.test(navigator.platform))
